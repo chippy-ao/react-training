@@ -1,0 +1,37 @@
+{
+  "cSpell.customDictionaries": {
+    "app-words": {
+      "name": "app-words",
+      "path": "${workspaceRoot}/.cspell/app-words.txt",
+      "description": "Words specific to this application",
+      "addWords": true,
+      "scope": "workspace"
+    }
+  },
+  "cSpell.ignorePaths": [
+    "node_modules",
+    "*.lock",
+    ".vscode",
+    ".env.*",
+    "renovate.json5",
+    "package.json",
+    "lefthook.yml",
+    "bootstrap.sh",
+    ".cursorrules",
+    ".cursorignore"
+  ],
+  "editor.formatOnSave": true,
+  "editor.formatOnType": true,
+  "editor.formatOnPaste": true,
+  "editor.rulers": [80],
+  "editor.renderWhitespace": "all",
+  "editor.renderControlCharacters": true,
+  "editor.minimap.enabled": false,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.defaultFormatter": "biomejs.biome",
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "$(capture).test.ts"
+  }
+}
