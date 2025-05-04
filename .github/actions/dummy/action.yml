@@ -13,5 +13,4 @@ runs:
       run: |
         echo ${{ inputs.dummy-secrets }}
         echo ${{ env.DUMMY_SECRETS }}
-        echo ${{ secrets.DUMMY_SECRETS }}
       shell: bash
