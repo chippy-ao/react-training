@@ -1,0 +1,15 @@
+name: Dummy Workflow
+
+on:
+  workflow_dispatch:
+
+jobs:
+  dummy:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: sample action
+        uses: ./.github/actions/dummy
+        with:
+          dummy-secrets: ${{ secrets.DUMMY_SECRETS }}
+        env:
+          DUMMY_SECRETS: ${{ secrets.DUMMY_SECRETS }}

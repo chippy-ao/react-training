@@ -1,0 +1,17 @@
+name: 'Dummy'
+description: 'dummy action'
+
+inputs:
+  dummy-secrets:
+    description: 'dummy secrets'
+    required: true
+
+runs:
+  using: 'composite'
+  steps:
+    - name: dummy
+      run: |
+        echo ${{ inputs.dummy-secrets }}
+        echo ${{ env.DUMMY_SECRETS }}
+        echo ${{ secrets.DUMMY_SECRETS }}
+      shell: bash
