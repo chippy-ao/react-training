@@ -13,7 +13,7 @@ echo ""
 
 # Project root directory
 SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
-cd "$FILE_PATH/../" || exit
+cd "$SCRIPT_DIR/../" || exit
 
 echo "🚀 Bootstrap start"
 echo "🚀 Working directory: $(pwd)"
