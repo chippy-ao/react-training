@@ -83,7 +83,7 @@ if type lefthook >/dev/null 2>&1; then
     echo "🚫 lefthook install: Failed"
   fi
 else
-  echo "⚠️ lefthook install: Skip bun because it could not be found."
+  echo "⚠️ lefthook install: Skip lefthook because it could not be found."
   echo "⚠️ lefthook install: This may be due to the fact that the mise installation has not been completed."
 fi
 
