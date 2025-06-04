@@ -1,6 +1,6 @@
 # CLAUDE.md
 
-If you find @~/.claude/CLAUDE.md , you should be read it.
+If you find @~/.claude/CLAUDE.md , you should read it.
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
