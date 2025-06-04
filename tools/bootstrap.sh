@@ -12,7 +12,7 @@ echo"  ###  ###  ######## ########  ######   #######  ##     ## ######## ";
 echo ""
 
 # Project root directory
-FILE_PATH=$(dirname "$0")
+SCRIPT_DIR=$(cd "$(dirname "${BASH_SOURCE[0]}")" &>/dev/null && pwd)
 cd "$FILE_PATH/../" || exit
 
 echo "🚀 Bootstrap start"
