@@ -52,3 +52,8 @@ This is a React application built with TypeScript and Vite. The project uses:
 - No testing framework is currently configured
 - The main entry point is `/src/main.tsx`
 - Biome replaces both ESLint and Prettier - use `bun check` and `bun check:fix` for all linting/formatting
+
+## Package Management Rules
+
+- When adding new dependencies, always use the latest stable version with fixed versioning (no ^ or ~ prefixes)
+- Example: `bun add package-name@1.2.3` (not `bun add package-name` or `bun add package-name@^1.2.3`)
