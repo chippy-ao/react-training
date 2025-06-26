@@ -7,7 +7,7 @@
   "timezone": "Asia/Tokyo",
   "schedule": [
     // "every day at 7:00 and 16:00",
-    "0 7,16 * * *",
+    "* 7,16 * * *",
   ],
   "dependencyDashboard": false,
   "labels": [
