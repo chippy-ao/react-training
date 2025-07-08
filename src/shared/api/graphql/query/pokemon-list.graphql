@@ -1,0 +1,23 @@
+query GetPokemonList($limit: Int = 20, $offset: Int = 0, $languageId: Int = 11) {
+  pokemon(limit: $limit, offset: $offset, order_by: { id: asc }) {
+    id
+    height
+    weight
+    pokemonspecy {
+      pokemonspeciesnames(where: { language_id: { _eq: $languageId } }) {
+        name
+        genus
+      }
+    }
+    pokemontypes {
+      type {
+        typenames(where: { language_id: { _eq: $languageId } }) {
+          name
+        }
+      }
+    }
+    pokemonsprites(limit: 1) {
+      sprites
+    }
+  }
+}
