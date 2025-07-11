@@ -20,7 +20,7 @@
     "react-dom": "19.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "1.9.4",
+    "@biomejs/biome": "2.1.1",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
     "@graphql-codegen/cli": "5.0.7",
