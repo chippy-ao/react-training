@@ -4,56 +4,42 @@ If you find @~/.claude/CLAUDE.md , you should read it.
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Development Commands
+## プロジェクトドキュメント
 
-```bash
-# Install dependencies
-bun install
+このプロジェクトの詳細な仕様とルールは `.kiro/` ディレクトリに定義されています：
 
-# Start development server
-bun dev
+- `.kiro/steering/` - プロジェクト全体の設定
+  - `language.md` - 言語とコミュニケーションスタイル
+  - `product.md` - プロダクト概要と目的
+  - `structure.md` - プロジェクト構造とファイル命名規則
+  - `tech.md` - 技術スタックと開発コマンド
+- `.kiro/specs/pokemon-pokedex/` - ポケモン図鑑アプリケーションの仕様
+  - `requirements.md` - 機能要件と受け入れ基準
+  - `design.md` - アーキテクチャ設計とコンポーネント構成
+  - `tasks.md` - 実装計画とタスク一覧
 
-# Type-check and build for production
-bun build
+**重要**: 開発時は必ずこれらのドキュメントを参照し、定義されたルールと仕様に従ってください。
 
-# Run Biome linting/formatting checks
-bun check
+## プロジェクト固有の設定
 
-# Auto-fix linting/formatting issues
-bun check:fix
+以下は `.kiro` に記載されていない、このプロジェクト固有の設定です：
 
-# Preview production build locally
-bun preview
-```
+### Biome設定の詳細
 
-## Project Architecture
+- シングルクォート、2スペースインデント、120文字の行幅
+- 重要なルール: `noUnusedImports` (エラーレベル)、`noNonNullAssertion` (無効)
+- インポートの自動整理
 
-This is a React application built with TypeScript and Vite. The project uses:
+### TypeScript設定の詳細
+- プロジェクト参照を使用（`tsconfig.app.json`と`tsconfig.node.json`で分離）
+- Strictモードと追加チェック: `noUnusedLocals`、`noUnusedParameters`、`noFallthroughCasesInSwitch`
 
-- **Bun** as the package manager (not npm/yarn)
-- **Biome** for linting and formatting (not ESLint/Prettier)
-- **mise** for tool version management (Bun 1.2.15)
-- **TypeScript** with strict mode enabled
-- **Vite** for development and bundling
+### パッケージ管理ルール
+- 新しい依存関係を追加する際は、常に最新の安定版を固定バージョンで使用（^や~プレフィックスなし）
+- 例: `bun add package-name@1.2.3` (×: `bun add package-name` や `bun add package-name@^1.2.3`)
 
-## Key Configuration
+## 重要な注意事項
 
-### Biome Configuration
-- Single quotes, 2-space indentation, 120-character line width
-- Important rules: `noUnusedImports` (error level), `noNonNullAssertion` (disabled)
-- Organizes imports automatically
-
-### TypeScript Configuration
-- Uses project references with separate configs for app (`tsconfig.app.json`) and node (`tsconfig.node.json`)
-- Strict mode with additional checks: `noUnusedLocals`, `noUnusedParameters`, `noFallthroughCasesInSwitch`
-
-## Important Notes
-
-- No testing framework is currently configured
-- The main entry point is `/src/main.tsx`
-- Biome replaces both ESLint and Prettier - use `bun check` and `bun check:fix` for all linting/formatting
-
-## Package Management Rules
-
-- When adding new dependencies, always use the latest stable version with fixed versioning (no ^ or ~ prefixes)
-- Example: `bun add package-name@1.2.3` (not `bun add package-name` or `bun add package-name@^1.2.3`)
+- テストフレームワークは現在設定されていません
+- メインエントリーポイントは `/src/main.tsx`
+- BiomeはESLintとPrettierの両方を置き換えます - `bun check`と`bun check:fix`を使用してください
