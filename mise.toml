@@ -1,0 +1,14 @@
+[tools]
+bun = "1.2.19"
+nodejs = "22.17.1"
+
+[tasks.bootstrap]
+description = "Initialize the workspace."
+run = './tools/bootstrap.sh'
+alias = "bs"
+
+[tasks.clean]
+description = "Clean this workspace."
+run = [
+  'bun run clean',
+]
