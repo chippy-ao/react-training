@@ -1,0 +1,68 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": [
+    "config:base",
+    ":automergeMinor",
+  ],
+  "timezone": "Asia/Tokyo",
+  "schedule": [
+    // "every day at 7:00 and 16:00",
+    "* 7,16 * * *",
+  ],
+  "dependencyDashboard": false,
+  "labels": [
+    "dependencies"
+  ],
+  "pruneBranchAfterAutomerge": true,
+  "rangeStrategy": "pin",
+  "packageRules": [
+    {
+      "groupName": "github-actions non-major dependencies",
+      "groupSlug": "github-actions-minor-patch",
+      "addLabels": [
+        "ignore for release",
+      ],
+      "matchManagers": [
+        "github-actions",
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+    },
+    {
+      "groupName": "bun non-major dependencies",
+      "groupSlug": "bun-minor-patch",
+      "matchManagers": [
+        "bun",
+        "npm",
+      ],
+      "matchPackagePatterns": [
+        "*"
+      ],
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+    },
+    {
+      "groupName": "React ecosystem",
+      "matchPackageNames": [
+        "react",
+        "react-dom",
+        "@types/react",
+        "@types/react-dom"
+      ]
+    },
+    {
+      "groupName": "Vite ecosystem",
+      "matchPackageNames": [
+        "vite",
+        "@vitejs/plugin-react"
+      ]
+    }
+  ]
+}
