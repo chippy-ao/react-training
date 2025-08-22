@@ -28,7 +28,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["routeTree.gen.ts"]
+    "ignore": ["routeTree.gen.ts", "src/shared/api/graphql/**"]
   },
   "organizeImports": {
     "enabled": true
