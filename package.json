@@ -14,7 +14,7 @@
     "check:fix": "biome check --write",
     "clean": "git clean -xdf node_modules",
     "preview": "vite preview",
-    "codegen": "graphql-codegen"
+    "generate": "bun graphql-codegen --config codegen.ts"
   },
   "dependencies": {
     "@tailwindcss/vite": "4.1.12",
@@ -23,6 +23,8 @@
     "@tanstack/react-router": "1.130.2",
     "@tanstack/react-router-devtools": "1.130.2",
     "@tanstack/router-plugin": "1.121.2",
+    "graphql": "16.11.0",
+    "graphql-request": "7.1.2",
     "react": "19.0.0",
     "react-dom": "19.0.0",
     "tailwindcss": "4.1.12"
@@ -31,6 +33,7 @@
     "@biomejs/biome": "1.9.4",
     "@commitlint/cli": "19.8.1",
     "@commitlint/config-conventional": "19.8.1",
+    "@graphql-codegen/cli": "5.0.7",
     "@testing-library/dom": "10.4.0",
     "@testing-library/react": "16.2.0",
     "@types/react": "19.0.8",
