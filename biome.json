@@ -28,7 +28,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/routeTree.gen.ts", "!**/src/shared/api/graphql"]
+    "includes": ["**", "!**/routeTree.gen.ts", "!src/shared/api/graphql/**"]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "javascript": {
