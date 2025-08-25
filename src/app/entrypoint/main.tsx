@@ -1,8 +1,9 @@
 import { createRouter, RouterProvider } from '@tanstack/react-router'
 import { StrictMode } from 'react'
 import ReactDOM from 'react-dom/client'
-
+import { I18nProvider } from '../providers/i18n/I18nProvider'
 import * as TanStackQueryProvider from '../providers/query-provider.tsx'
+import { ThemeProvider } from '../providers/theme/ThemeProvider'
 
 // Import the generated route tree
 import { routeTree } from '../routes/routeTree.gen.ts'
@@ -37,9 +38,13 @@ if (rootElement && !rootElement.innerHTML) {
   const root = ReactDOM.createRoot(rootElement)
   root.render(
     <StrictMode>
-      <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
-        <RouterProvider router={router} />
-      </TanStackQueryProvider.Provider>
+      <ThemeProvider>
+        <I18nProvider>
+          <TanStackQueryProvider.Provider {...TanStackQueryProviderContext}>
+            <RouterProvider router={router} />
+          </TanStackQueryProvider.Provider>
+        </I18nProvider>
+      </ThemeProvider>
     </StrictMode>,
   )
 }
