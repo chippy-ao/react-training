@@ -1,5 +1,5 @@
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "https://biomejs.dev/schemas/2.2.0/schema.json",
   "linter": {
     "enabled": true,
     "rules": {
@@ -28,11 +28,9 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "ignore": ["routeTree.gen.ts", "src/shared/api/graphql/**"]
+    "includes": ["**", "!**/routeTree.gen.ts", "!**/src/shared/api/graphql"]
   },
-  "organizeImports": {
-    "enabled": true
-  },
+  "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "javascript": {
     "formatter": {
       "quoteStyle": "single",
