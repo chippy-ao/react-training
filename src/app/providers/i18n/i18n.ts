@@ -1,4 +1,5 @@
 import i18n from 'i18next'
+import LanguageDetector from 'i18next-browser-languagedetector'
 import { initReactI18next } from 'react-i18next'
 
 // 翻訳リソース
@@ -16,19 +17,22 @@ const resources = {
 }
 
 void i18n
+  .use(LanguageDetector) // ブラウザ言語検出プラグイン
   .use(initReactI18next) // React i18next プラグイン
   .init({
     resources,
-    lng: localStorage.getItem('language') || 'ja', // localStorageから取得、なければ日本語
     fallbackLng: 'ja', // フォールバック言語
+    detection: {
+      // 言語検出の順序
+      order: ['localStorage', 'navigator', 'htmlTag'],
+      // localStorageのキー名
+      lookupLocalStorage: 'language',
+      // 自動的にlocalStorageに保存
+      caches: ['localStorage'],
+    },
     interpolation: {
       escapeValue: false, // React は XSS を防ぐため
     },
   })
-
-// 言語変更時にlocalStorageに保存
-i18n.on('languageChanged', (lng) => {
-  localStorage.setItem('language', lng)
-})
 
 export default i18n
