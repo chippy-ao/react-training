@@ -1,1 +1,1 @@
-export { Button, buttonVariants } from './Button/button'
+export { Button, buttonVariants } from './Button/Button.tsx'

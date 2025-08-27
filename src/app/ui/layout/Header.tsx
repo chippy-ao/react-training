@@ -1,6 +1,6 @@
-import { useAtom } from 'jotai'
 import { Link } from '@tanstack/react-router'
-import { themeAtom, colorSetAtom, type Theme, type ColorSet } from '../../../features/changeTheme'
+import { useAtom } from 'jotai'
+import { type ColorSet, colorSetAtom, type Theme, themeAtom } from '@/features/changeTheme'
 
 export default function Header() {
   const [theme, setTheme] = useAtom(themeAtom)
@@ -20,13 +20,14 @@ export default function Header() {
           <Link to="/demo/tanstack-query">TanStack Query</Link>
         </div>
       </nav>
-      
+
       <div className="flex gap-2 items-center">
         <div className="flex gap-1">
           <span className="text-sm">テーマ:</span>
           {themes.map((t) => (
             <button
               key={t}
+              type="button"
               onClick={() => setTheme(t)}
               className={`px-2 py-1 text-xs rounded border ${
                 theme === t
@@ -38,12 +39,13 @@ export default function Header() {
             </button>
           ))}
         </div>
-        
+
         <div className="flex gap-1">
           <span className="text-sm">色:</span>
           {colorSets.map((color) => (
             <button
               key={color}
+              type="button"
               onClick={() => setColorSet(color)}
               className={`px-2 py-1 text-xs rounded border ${
                 colorSet === color
