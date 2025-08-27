@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai'
 import { type ReactNode, useEffect } from 'react'
-import { colorSetAtom, themeAtom } from '../../../features/changeTheme'
+import { colorSetAtom, themeAtom } from '@/features/changeTheme'
 
 interface ThemeProviderProps {
   children: ReactNode
@@ -34,9 +34,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       const newResolvedTheme = mediaQuery.matches ? 'dark' : 'light'
       document.documentElement.setAttribute('data-theme', newResolvedTheme)
     }
-
-    // 初期設定
-    handleChange()
 
     // 変更を監視
     mediaQuery.addEventListener('change', handleChange)
