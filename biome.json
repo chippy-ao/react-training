@@ -41,5 +41,13 @@
     "parser": {
       "allowComments": true
     }
-  }
+  },
+  "overrides": [
+    {
+      "includes": ["src/app/styles/styles.css"],
+      "linter": {
+        "enabled": false
+      }
+    }
+  ]
 }
