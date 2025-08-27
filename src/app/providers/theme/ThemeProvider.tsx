@@ -35,9 +35,6 @@ export const ThemeProvider = ({ children }: ThemeProviderProps) => {
       document.documentElement.setAttribute('data-theme', newResolvedTheme)
     }
 
-    // 初期設定
-    handleChange()
-
     // 変更を監視
     mediaQuery.addEventListener('change', handleChange)
     return () => mediaQuery.removeEventListener('change', handleChange)
