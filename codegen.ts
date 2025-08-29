@@ -4,7 +4,7 @@ const config: CodegenConfig = {
   schema: 'https://graphql.pokeapi.co/v1beta2',
   documents: ['./src/**/*.(tsx|ts)'],
   generates: {
-    './src/shared/api/graphql/': {
+    './src/shared/api/gen/': {
       preset: 'client',
       plugins: [],
     },

@@ -1,6 +1,6 @@
 import { useAtom } from 'jotai'
 import { type ReactNode, useEffect } from 'react'
-import { colorSetAtom, themeAtom } from '@/features/changeTheme'
+import { colorSetAtom, themeAtom } from '@/features/changeTheme/model/theme'
 
 interface ThemeProviderProps {
   children: ReactNode
