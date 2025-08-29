@@ -12,6 +12,13 @@
       },
       "a11y": {
         "useKeyWithClickEvents": "off"
+      },
+      "performance": {
+        "noBarrelFile": "error",
+        "noReExportAll": "error"
+      },
+      "nursery": {
+        "noImportCycles": "error"
       }
     }
   },
@@ -28,7 +35,7 @@
   },
   "files": {
     "ignoreUnknown": false,
-    "includes": ["**", "!**/routeTree.gen.ts", "!src/shared/api/graphql"]
+    "includes": ["**", "!**/routeTree.gen.ts", "!src/shared/api/gen"]
   },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
   "javascript": {

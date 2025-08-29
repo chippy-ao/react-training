@@ -31,8 +31,11 @@ bun dev
 - 各種パッケージのスクリプトは @./package.json の scripts を参照してください。
 - ライブラリのバージョンについてはチルダやキャレットは使用せず、 `x.x.x` と固定化し、可能な限り最新バージョンを使用してください。
 
-### 重要な注意事項
-- `src/app/routes/routeTree.gen.ts` は TanStack Router による自動生成ファイルのため、編集しないでください。
+### コーディングについて
+- 相対パスを使用せず、 @tsconfig.json に記載されたパスエイリアスを使ってください。
+
+### 注意事項
+- @src/app/routes/routeTree.gen.ts およびは @src/shared/api/gen は自動生成ファイルのため、編集しないでください。
 
 ## 🌿 Git運用規則
 
