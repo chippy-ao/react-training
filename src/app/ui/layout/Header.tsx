@@ -1,6 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { useAtom } from 'jotai'
-import { type ColorSet, colorSetAtom, type Theme, themeAtom } from '@/features/changeTheme'
+import { type ColorSet, colorSetAtom, type Theme, themeAtom } from '@/features/changeTheme/model/theme'
 
 export default function Header() {
   const [theme, setTheme] = useAtom(themeAtom)
